@@ -18,7 +18,7 @@ vector<int> medianII(vector<int> &nums) {
 			maxHeap.push(nums[i]);//maxHeap每时每刻存储较小的nums[i]，堆顶为这一半数的最大值,即maxHeap.
 		} else {//nums[i] 不比 中位数median小,则 -nums[i]插入最小堆minHeap.
 			minHeap.push(-nums[i]);//minHeap每时每刻存储较大的-nums[i],maxHeap每时每刻存储较大的nums[i]，堆顶为这一半数的最小值,即minHeap.？？
-		}
+		}//因为本来堆是最大堆,-nums[i]反着插,就是最小堆了
 
 		if (maxHeap.size() > minHeap.size()) {//最大堆maxHeap元素个数 多于 最小堆minHeap
 			minHeap.push(-median);//将元素个数少的minHeap增大？？
